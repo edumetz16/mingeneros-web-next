@@ -16,14 +16,22 @@ export default async function Article({params:{articleId}}: {params:{articleId:s
     name: 'Editorial Mingeneros'
   }]
   const article = await getData(articleId);
+  console.log(article);
   return (
     <>
       {/* <Breadcrumb parts={breadcrumbParts}></Breadcrumb> */}
-      <div className="container mt-8 grid grid-cols-12">
+      <div className="container mt-8 grid grid-cols-12 gap-6">
 
+      <h1 className="text-3xl font-bold col-span-12">{article.title}</h1>
+      <hr className="col-span-12"></hr>
+      <div className="col-span-12 md:col-span-6">
+        <div className="w-full relative">
+          <Image src={article.thumbnail} alt="Mingeneros" width={840} height={1241}></Image>
+
+        </div>
+        </div>
       <div className="col-span-12 md:col-span-6">
 
-      <h1 className="text-2xl font-bold">{article.title}</h1>
       <div className="my-4">
         <p>{article.description}</p>
       </div>
