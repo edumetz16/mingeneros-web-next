@@ -16,12 +16,18 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+@layer components {
+  .container {
+    @apply max-w-screen-xl w-full px-4 mx-auto;
+  }
+  .download {
+    background-image: url(/img/Ic_cloud_download_48px.svg);
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-position: center;
+  }
 }
